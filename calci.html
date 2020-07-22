@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="calci.css" />
+    <script>
+      function insert(num) {
+        document.calc.txt.value = document.calc.txt.value + num;
+      }
+
+      function equal() {
+        var exp = document.calc.txt.value;
+        if (exp) {
+          document.calc.txt.value = eval(exp);
+        }
+      }
+      function clean() {
+        document.calc.txt.value = "";
+      }
+      function back() {
+        var exp = document.calc.txt.value;
+        document.calc.txt.value = exp.substring(0, exp.length - 1);
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <div><h1>>Calculator</h1></div>
+      <div>
+        <form class="calculator" name="calc">
+          <input class="value" type="text" name="txt" readonly="" />
+          <span class="num clear" onclick="clean()">Clear</span>
+          <span class="num" onclick="document.calc.txt.value +='/'">/</span>
+          <span class="num" onclick="insert(9)">9</span>
+          <span class="num" onclick="insert('*')">*</span>
+          <span class="num" onclick="insert(8)">8</span>
+          <span class="num" onclick="insert(7)">7</span>
+          <span class="num" onclick="insert(6)">6</span>
+          <span class="num" onclick="insert('-')">-</span>
+          <span class="num" onclick="insert(5)">5</span>
+          <span class="num" onclick="insert(4)">4</span>
+          <span class="num" onclick="insert(3)">3</span>
+          <span class="num plus" onclick="insert('+')">+</span>
+          <span class="num" onclick="insert(2)">2</span>
+          <span class="num" onclick="insert(1)">1</span>
+          <span class="num" onclick="insert(0)">0</span>
+          <span class="num" onclick="back()">C</span>
+          <span class="num" onclick="insert('.')">.</span>
+          <span class="num equal" onclick="equal()">=</span>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
